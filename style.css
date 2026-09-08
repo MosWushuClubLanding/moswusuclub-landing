@@ -379,23 +379,64 @@ body {
 }
 
 /* Адаптация под планшеты и мобильные устройства */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+   /* Контейнер и базовые отступы */
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    section {
+        padding: 30px 0 !important; /* Уменьшаем вертикальные отступы между секциями */
+    }
+
+    /* Заголовки */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.4rem !important;
+    }
+
+    /* Секция: Почему выбирают наш зал (Преимущества) */
     .features-wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse; /* Эмблема уходит вниз или наверх */
+        gap: 20px;
     }
 
-    .emblem-box {
-        margin-top: 15px;
+    .section-emblem {
+        max-width: 140px; /* Уменьшаем эмблему на мобильных */
     }
 
+    /* Секция: Тренер филиала */
     .trainer-card {
-        flex-direction: column;
+        flex-direction: column; /* Картинка и текст друг под другом */
+        align-items: center;
         text-align: center;
-        padding: 25px;
+        gap: 15px;
     }
 
     .trainer-photo {
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        max-width: 280px; /* Аккуратное фото по центру */
+    }
+
+    .trainer-info {
+        padding-right: 0;
+        text-align: left; /* Оставляем удобный для чтения список */
+    }
+
+    /* Нижний блок кнопок (Связь) */
+    .cta-buttons {
+        flex-direction: column; /* Кнопки одна под другой */
+        width: 100%;
+    }
+
+    .cta-buttons a,
+    .footer-buttons a {
+        width: 100% !important; /* Кнопки во всю ширину экрана мобильного */
+        min-width: unset !important;
+        padding: 12px 0 !important; /* Удобный размер под нажатие пальцем */
     }
 }
