@@ -474,10 +474,12 @@ body {
 
 /* Адаптация под планшеты и мобильные устройства */
 @media (max-width: 768px) {
-  /* Жесткое отключение горизонтальной прокрутки */
+  /* Полный сброс горизонтального сдвига */
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .container {
@@ -488,64 +490,70 @@ body {
     }
 
     /* 1. Секция «Почему выбирают наш зал» */
-    .features-wrapper {
-        display: flex !important;
-        flex-direction: column !important; /* Ставит эмблему строго над/под списком */
-        align-items: center !important;
-        gap: 20px !important;
-        width: 100% !important;
-    }
-
-    .section-emblem,
-    .features-wrapper img {
-        order: -1 !important; /* Строго переносит эмблему САМОЙ ПЕРВОЙ (наверх) */
-        max-width: 160px !important; /* Компактный размер по центру */
-        height: auto !important;
-        margin: 0 auto 10px auto !important;
-        display: block !important;
-    }
-
-    .features-grid {
+    /* Превращаем все обертки преимуществ в одну колонку */
+    .features-wrapper,
+    [class*="features"] {
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px !important;
+        align-items: center !important;
         width: 100% !important;
     }
 
-    /* 2. Секция «Наши направления» — строго вертикальные карточки */
+    /* Ставим эмблему СВЕРХУ по центру */
+    .section-emblem,
+    .features-wrapper img,
+    img[src*="Emblem"],
+    img[src*="emblem"] {
+        order: -1 !important;
+        max-width: 150px !important;
+        width: 150px !important;
+        height: auto !important;
+        margin: 0 auto 20px auto !important;
+        display: block !important;
+        float: none !important;
+    }
+
+    /* 2. Секция «Наши направления» и все сетки карточек */
+    /* Принудительно ставим карточки ДРУГ ПОД ДРУГА */
     .directions-grid,
-    .cards-grid,
-    .grid {
+    .features-grid,
+    .pricing-grid,
+    .grid,
+    [class*="-grid"] {
         display: flex !important;
-        flex-direction: column !important; /* Выстраивает направления вертикально друг под другом */
+        flex-direction: column !important;
         gap: 16px !important;
         width: 100% !important;
     }
 
+    /* Карточки растягиваем на весь экран */
     .direction-card,
     .feature-card,
-    .pricing-card {
+    .pricing-card,
+    .card,
+    [class*="-card"] {
         width: 100% !important;
         max-width: 100% !important;
+        min-width: 0 !important;
         box-sizing: border-box !important;
     }
 
-    /* 3. Тренер и расписание */
-    .trainer-card,
-    .pricing-grid {
+    /* 3. Тренер филиала */
+    .trainer-card {
         display: flex !important;
         flex-direction: column !important;
-        width: 100% !important;
+        align-items: center !important;
     }
 
     .trainer-photo {
-        width: 100% !important;
-        max-width: 240px !important;
-        margin: 0 auto !important;
+        width: 100 !important;
+        max-width: 260px !important;
+        margin: 0 auto 16px auto !important;
     }
 
-    /* 4. Кнопки связи */
-    .cta-buttons {
+    /* 4. Кнопки внизу */
+    .cta-buttons,
+    .footer-buttons {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
@@ -555,7 +563,7 @@ body {
     .cta-buttons a,
     .footer-buttons a {
         width: 100% !important;
-        min-width: unset !important;
+        min-width: 100% !important;
         padding: 12px 0 !important;
         box-sizing: border-box !important;
     }
