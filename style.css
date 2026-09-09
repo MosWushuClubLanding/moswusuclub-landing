@@ -474,63 +474,83 @@ body {
 
 /* Адаптация под планшеты и мобильные устройства */
 @media (max-width: 768px) {
-    /* Контейнер и базовые отступы */
+  /* Фикс горизонтальной прокрутки */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* Базовый контейнер */
     .container {
-        width: 100%;
-        padding: 0 16px;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
     }
 
+    /* Секции */
     section {
-        padding: 30px 0 !important; /* Уменьшаем вертикальные отступы между секциями */
+        padding: 30px 0 !important;
+        overflow: hidden !important;
     }
 
-    /* Заголовки */
-    h1 {
-        font-size: 1.8rem !important;
+    /* Карточки направлений — выстраиваем строго в 1 колонку */
+    .directions-grid,
+    .features-grid,
+    .pricing-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        width: 100% !important;
     }
 
-    h2 {
-        font-size: 1.4rem !important;
+    .direction-card,
+    .feature-card,
+    .pricing-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-    /* Секция: Почему выбирают наш зал (Преимущества) */
-    .features-wrapper {
-        flex-direction: column-reverse; /* Эмблема уходит вниз или наверх */
-        gap: 20px;
+    /* Исправление логотипа/эмблемы */
+    .section-emblem,
+    .features-wrapper img,
+    img {
+        max-width: 100% !important;
+        height: auto !important;
     }
 
     .section-emblem {
-        max-width: 140px; /* Уменьшаем эмблему на мобильных */
+        max-width: 200px !important; /* Ограничиваем размер круглой эмблемы */
+        margin: 0 auto 20px auto !important;
+        display: block !important;
     }
 
-    /* Секция: Тренер филиала */
+    /* Тренер филиала */
     .trainer-card {
-        flex-direction: column; /* Картинка и текст друг под другом */
-        align-items: center;
-        text-align: center;
-        gap: 15px;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: left !important;
+        gap: 16px !important;
     }
 
     .trainer-photo {
-        width: 100%;
-        max-width: 280px; /* Аккуратное фото по центру */
+        width: 100% !important;
+        max-width: 260px !important;
     }
 
-    .trainer-info {
-        padding-right: 0;
-        text-align: left; /* Оставляем удобный для чтения список */
-    }
-
-    /* Нижний блок кнопок (Связь) */
+    /* Кнопки призыва */
     .cta-buttons {
-        flex-direction: column; /* Кнопки одна под другой */
-        width: 100%;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 10px !important;
     }
 
-        .cta-buttons a,
-        .footer-buttons a {
-            width: 100% !important; /* Кнопки во всю ширину экрана мобильного */
-            min-width: unset !important;
-            padding: 12px 0 !important; /* Удобный размер под нажатие пальцем */
-        }
+    .cta-buttons a,
+    .footer-buttons a {
+        width: 100% !important;
+        min-width: unset !important;
+        padding: 12px 0 !important;
+        box-sizing: border-box !important;
+    }
 }
