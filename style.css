@@ -477,97 +477,116 @@ body {
 
 /* Адаптация под планшеты и мобильные устройства */
 @media (max-width: 768px) {
-  /* Полный сброс горизонтального сдвига */
+      /* Фиксация светлой темы исключительно на телефонах */
+    :root {
+        color-scheme: light !important;
+    }
+
     html, body {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
         overflow-x: hidden !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
     }
 
-    .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 16px !important;
-        box-sizing: border-box !important;
+    /* Светлые секции */
+    section {
+        background-color: #ffffff !important;
     }
 
-    /* 1. Секция «Почему выбирают наш зал» */
-    /* Превращаем все обертки преимуществ в одну колонку */
-    .features-wrapper,
-    [class*="features"] {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
+    section:nth-child(even) {
+        background-color: #f1f5f9 !important;
     }
 
-    /* Ставим эмблему СВЕРХУ по центру */
-    .section-emblem,
-    .features-wrapper img,
-    img[src*="Emblem"],
-    img[src*="emblem"] {
-        order: -1 !important;
-        max-width: 150px !important;
-        width: 150px !important;
-        height: auto !important;
-        margin: 0 auto 20px auto !important;
-        display: block !important;
-        float: none !important;
+    /* Заголовки и тексты на мобильном */
+    section h2, section h3, section h4 {
+        color: #0f172a !important;
     }
 
-    /* 2. Секция «Наши направления» и все сетки карточек */
-    /* Принудительно ставим карточки ДРУГ ПОД ДРУГА */
-    .directions-grid,
-    .features-grid,
-    .pricing-grid,
-    .grid,
-    [class*="-grid"] {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 16px !important;
-        width: 100% !important;
+    section p, section li, section span {
+        color: #334155 !important;
     }
 
-    /* Карточки растягиваем на весь экран */
-    .direction-card,
+    /* Карточки на мобильном */
     .feature-card,
-    .pricing-card,
-    .card,
-    [class*="-card"] {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
+    .direction-card,
+    .pricing-card {
+        background-color: #ffffff !important;
+        border: 1px solid #b91c1c !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
-    /* 3. Тренер филиала */
+    /* Специфика расписания */
+    .schedule-list li, .price-item {
+        border-bottom: 1px solid #e2e8f0 !important;
+        color: #334155 !important;
+    }
+
+    .schedule-list li span, .price-title {
+        color: #0f172a !important;
+    }
+
+    /* Блок тренера на мобильном */
     .trainer-card {
-        display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
+        text-align: left;
     }
 
     .trainer-photo {
-        width: 100 !important;
-        max-width: 260px !important;
-        margin: 0 auto 16px auto !important;
+        max-width: 240px !important;
+        margin: 0 auto;
     }
 
-    /* 4. Кнопки внизу */
-    .cta-buttons,
-    .footer-buttons {
+    .trainer-info h3, .trainer-info h4 {
+        color: #0f172a !important;
+    }
+
+    /* Шапка и подвал остаются темно-графитовыми для контраста */
+    header, .hero-section, footer, .cta-section {
+        background-color: #0b0f19 !important;
+        color: #ffffff !important;
+    }
+
+    header h1, .hero-section h1, footer p, .cta-section h2, .cta-section p {
+        color: #ffffff !important;
+    }
+
+    /* Вертикальное построение элементов */
+    header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .features-wrapper {
         display: flex !important;
         flex-direction: column !important;
-        width: 100% !important;
+        align-items: center !important;
+    }
+
+    .section-emblem, .features-wrapper img {
+        order: -1 !important;
+        max-width: 150px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .directions-grid,
+    .features-grid,
+    .pricing-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+               width: 100% !important;
         gap: 10px !important;
     }
 
-    .cta-buttons a,
-    .footer-buttons a {
+    .cta-buttons a {
         width: 100% !important;
-        min-width: 100% !important;
-        padding: 12px 0 !important;
-        box-sizing: border-box !important;
+        text-align: center;
     }
 }
