@@ -474,13 +474,12 @@ body {
 
 /* Адаптация под планшеты и мобильные устройства */
 @media (max-width: 768px) {
-  /* Фикс горизонтальной прокрутки */
+  /* Жесткое отключение горизонтальной прокрутки */
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
     }
 
-    /* Базовый контейнер */
     .container {
         width: 100% !important;
         max-width: 100% !important;
@@ -488,18 +487,37 @@ body {
         box-sizing: border-box !important;
     }
 
-    /* Секции */
-    section {
-        padding: 30px 0 !important;
-        overflow: hidden !important;
+    /* 1. Секция «Почему выбирают наш зал» */
+    .features-wrapper {
+        display: flex !important;
+        flex-direction: column !important; /* Ставит эмблему строго над/под списком */
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
     }
 
-    /* Карточки направлений — выстраиваем строго в 1 колонку */
-    .directions-grid,
-    .features-grid,
-    .pricing-grid {
+    .section-emblem,
+    .features-wrapper img {
+        order: -1 !important; /* Строго переносит эмблему САМОЙ ПЕРВОЙ (наверх) */
+        max-width: 160px !important; /* Компактный размер по центру */
+        height: auto !important;
+        margin: 0 auto 10px auto !important;
+        display: block !important;
+    }
+
+    .features-grid {
         display: flex !important;
         flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Секция «Наши направления» — строго вертикальные карточки */
+    .directions-grid,
+    .cards-grid,
+    .grid {
+        display: flex !important;
+        flex-direction: column !important; /* Выстраивает направления вертикально друг под другом */
         gap: 16px !important;
         width: 100% !important;
     }
@@ -512,35 +530,23 @@ body {
         box-sizing: border-box !important;
     }
 
-    /* Исправление логотипа/эмблемы */
-    .section-emblem,
-    .features-wrapper img,
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    .section-emblem {
-        max-width: 200px !important; /* Ограничиваем размер круглой эмблемы */
-        margin: 0 auto 20px auto !important;
-        display: block !important;
-    }
-
-    /* Тренер филиала */
-    .trainer-card {
+    /* 3. Тренер и расписание */
+    .trainer-card,
+    .pricing-grid {
+        display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: left !important;
-        gap: 16px !important;
+        width: 100% !important;
     }
 
     .trainer-photo {
         width: 100% !important;
-        max-width: 260px !important;
+        max-width: 240px !important;
+        margin: 0 auto !important;
     }
 
-    /* Кнопки призыва */
+    /* 4. Кнопки связи */
     .cta-buttons {
+        display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
         gap: 10px !important;
