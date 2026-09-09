@@ -505,6 +505,18 @@ body {
     section p, section li, section span {
         color: #334155 !important;
     }
+        .directions-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 16px !important;
+    }
+
+    .direction-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
 
     /* Карточки на мобильном */
     .feature-card,
