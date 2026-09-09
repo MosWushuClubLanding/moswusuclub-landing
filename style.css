@@ -247,6 +247,100 @@ body {
         font-size: 0.95rem;
     }
 
+/* Секция Цены и Расписание */
+.pricing-section {
+    padding: 40px 0;
+}
+
+.pricing-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.pricing-card {
+    background-color: #111827;
+    border: 1px solid #1f293d;
+    border-radius: 12px;
+    padding: 24px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+}
+
+    .pricing-card.highlighted {
+        border-color: #b91c1c; /* Фирменный красный акцент */
+    }
+
+    .pricing-card h3 {
+        margin-bottom: 16px;
+        color: #ffffff;
+        font-size: 1.2rem;
+    }
+
+/* Список расписания */
+.schedule-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .schedule-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #1f293d;
+        display: flex;
+        justify-content: space-between;
+        color: #e5e7eb;
+    }
+
+        .schedule-list li span {
+            font-weight: 600;
+        }
+
+/* Пункты цен */
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #1f293d;
+}
+
+.price-title {
+    color: #e5e7eb;
+}
+
+.price-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+    .price-value.free {
+        color: #22c55e; /* Зеленый акцент для бесплатного занятия */
+    }
+
+/* Разделение по возрастным группам */
+.age-group {
+    margin-bottom: 20px;
+}
+
+    .age-group:last-child {
+        margin-bottom: 0;
+    }
+
+.group-title {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #b91c1c; /* Красный фирменный акцент */
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Блок Тренера */
 .trainer-section {
     padding: 35px 0;
@@ -380,7 +474,7 @@ body {
 
 /* Адаптация под планшеты и мобильные устройства */
 @media (max-width: 768px) {
-   /* Контейнер и базовые отступы */
+    /* Контейнер и базовые отступы */
     .container {
         width: 100%;
         padding: 0 16px;
@@ -433,10 +527,10 @@ body {
         width: 100%;
     }
 
-    .cta-buttons a,
-    .footer-buttons a {
-        width: 100% !important; /* Кнопки во всю ширину экрана мобильного */
-        min-width: unset !important;
-        padding: 12px 0 !important; /* Удобный размер под нажатие пальцем */
-    }
+        .cta-buttons a,
+        .footer-buttons a {
+            width: 100% !important; /* Кнопки во всю ширину экрана мобильного */
+            min-width: unset !important;
+            padding: 12px 0 !important; /* Удобный размер под нажатие пальцем */
+        }
 }
