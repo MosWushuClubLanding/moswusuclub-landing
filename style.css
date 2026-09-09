@@ -528,59 +528,49 @@ body {
     }
 
     /* Специфика расписания */
-     /* 1. Возвращаем секции светлый фон (как везде на мобильном) */
-    .pricing, 
-    .schedule,
-    section:has(.pricing-card) {
-        background-color: #ffffff !important;
-        border: none !important;
-    }
-
-    /* 2. Только карточки делаем темными с красной рамкой снаружи */
+    /* Жесткая блокировка автозамены цвета для Яндекс Браузера */
     .pricing-card,
     .schedule-card,
     .pricing .card {
         background-color: #0b0f19 !important;
+        background: #0b0f19 !important;
         border: 1px solid #b91c1c !important;
         border-radius: 12px !important;
         padding: 20px !important;
+        /* Запрещает Яндекс Браузеру инвертировать цвета внутри элемента */
+        forced-color-adjust: none !important;
     }
 
-    /* 3. Убираем случайные красные рамки у ВНУТРЕННИХ элементов */
-    .pricing-card div,
-    .pricing-card ul,
-    .pricing-card li,
-    .price-item {
-        border: none !important;
-    }
-
-    /* 4. Разделительная линия между строками расписания и цен */
-    .schedule-list li,
-    .price-item {
-        border-bottom: 1px solid #1f2937 !important;
-    }
-
-    /* 5. Делаем Абсолютно Весь текст внутри темных карточек ярким и белым */
-    .pricing-card h3,
-    .schedule-card h3,
-    .pricing-card p,
-    .pricing-card span,
-    .pricing-card li,
-    .pricing-card div,
-    .price-item * {
+    /* Все тексты, даты и цены внутри темных карточек */
+    .pricing-card *,
+    .schedule-card *,
+    .pricing .card * {
         color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important; /* Фиксирует белый цвет текста в Яндекс/WebKit */
+        forced-color-adjust: none !important;
     }
 
-    /* 6. Акцентные цвета */
+    /* Дни недели и время */
+    .schedule-list li,
+    .schedule-list span,
+    .price-item span {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+
+    /* Ярко-красный для заголовков групп */
     .pricing-card h4, 
     .schedule-card h4,
     .group-title {
-        color: #ef4444 !important; /* Ярко-красный для названий групп */
+        color: #ef4444 !important;
+        -webkit-text-fill-color: #ef4444 !important;
     }
 
+    /* Зеленый для "Бесплатно" */
     .price-free, 
     span[class*="free"] {
-        color: #22c55e !important; /* Ярко-зеленый для "Бесплатно" */
+        color: #22c55e !important;
+        -webkit-text-fill-color: #22c55e !important;
     }
     /* Блок тренера на мобильном */
     .trainer-card {
