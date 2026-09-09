@@ -528,13 +528,26 @@ body {
     }
 
     /* Специфика расписания */
-    .schedule-list li, .price-item {
-        border-bottom: 1px solid #e2e8f0 !important;
-        color: #334155 !important;
+       .pricing-card,
+    .schedule-card,
+    .price-item {
+        background-color: #111827 !important; /* Темно-графитовый фон */
+        border: 1px solid #b91c1c !important; /* Красная рамка */
+        color: #ffffff !important;
     }
 
-    .schedule-list li span, .price-title {
-        color: #e5e7eb !important;
+    /* Делаем весь текст и цены внутри карточек контрастно белыми */
+    .pricing-card *,
+    .price-item *,
+    .price-value,
+    .price-amount {
+        color: #ffffff !important;
+    }
+
+    /* Бесплатная тренировка остается выделенной зеленым */
+    .price-free, 
+    span:contains("Бесплатно") {
+        color: #22c55e !important;
     }
 
     /* Блок тренера на мобильном */
