@@ -1,59 +1,6 @@
 :root {
     color-scheme: light only !important; /* "only" запрещает мобильным браузерам применять Dark Mode */
 }
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-/* Принудительный сброс фонов для всех элементов */
-html, body {
-    background-color: #f8fafc !important;
-    background: #f8fafc !important;
-    color: #1f2937 !important;
-    -webkit-text-size-adjust: 100%;
-}
-
-/* Главный баннер и шапка */
-header, .hero-section {
-    background-color: #0b0f19 !important;
-    background: #0b0f19 !important;
-    color: #ffffff !important;
-}
-
-header h1, .hero-section h1, .hero-section p {
-    color: #ffffff !important;
-}
-
-/* Все секции контента */
-section {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-    color: #1e293b !important;
-}
-
-/* Все карточки */
-.feature-card,
-.direction-card,
-.pricing-card,
-.trainer-card,
-div[class*="card"] {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-    border: 1px solid #b91c1c !important;
-    color: #1e293b !important;
-}
-
-h1, h2, h3, h4, p, span, li {
-    text-shadow: none !important;
-}
-
-/* Подвал и CTA */
-footer, .cta-section {
-    background-color: #0b0f19 !important;
-    background: #0b0f19 !important;
-    color: #ffffff !important;
-}
 /* Базовые настройки */
 * {
     box-sizing: border-box;
