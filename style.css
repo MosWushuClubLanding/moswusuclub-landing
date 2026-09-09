@@ -528,37 +528,60 @@ body {
     }
 
     /* Специфика расписания */
-         section.pricing,
-    section:has(.price-item),
-    .pricing-grid > div,
-    .schedule-container > div,
-    div[class*="price"],
-    div[class*="schedule"] {
-        background-color: #111827 !important;
+     /* 1. Возвращаем секции светлый фон (как везде на мобильном) */
+    .pricing, 
+    .schedule,
+    section:has(.pricing-card) {
+        background-color: #ffffff !important;
+        border: none !important;
+    }
+
+    /* 2. Только карточки делаем темными с красной рамкой снаружи */
+    .pricing-card,
+    .schedule-card,
+    .pricing .card {
+        background-color: #0b0f19 !important;
         border: 1px solid #b91c1c !important;
-        color: #ffffff !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
     }
 
-    /* Делаем абсолютно ВСЕ элементы внутри этих карточек белыми */
-    div[class*="price"] *,
-    div[class*="schedule"] *,
-    .price-item *,
-    .price-value {
-        color: #ffffff !important;
+    /* 3. Убираем случайные красные рамки у ВНУТРЕННИХ элементов */
+    .pricing-card div,
+    .pricing-card ul,
+    .pricing-card li,
+    .price-item {
+        border: none !important;
     }
 
-    /* Раделительные линии между строками */
-    .schedule-list li, 
+    /* 4. Разделительная линия между строками расписания и цен */
+    .schedule-list li,
     .price-item {
         border-bottom: 1px solid #1f2937 !important;
     }
 
-    /* Зеленый цвет для "Бесплатно" */
-    .price-value:has-text("Бесплатно"),
-    span[class*="free"] {
-        color: #22c55e !important;
+    /* 5. Делаем Абсолютно Весь текст внутри темных карточек ярким и белым */
+    .pricing-card h3,
+    .schedule-card h3,
+    .pricing-card p,
+    .pricing-card span,
+    .pricing-card li,
+    .pricing-card div,
+    .price-item * {
+        color: #ffffff !important;
     }
 
+    /* 6. Акцентные цвета */
+    .pricing-card h4, 
+    .schedule-card h4,
+    .group-title {
+        color: #ef4444 !important; /* Ярко-красный для названий групп */
+    }
+
+    .price-free, 
+    span[class*="free"] {
+        color: #22c55e !important; /* Ярко-зеленый для "Бесплатно" */
+    }
     /* Блок тренера на мобильном */
     .trainer-card {
         flex-direction: column !important;
