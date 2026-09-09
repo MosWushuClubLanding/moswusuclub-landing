@@ -505,9 +505,9 @@ body {
     section p, section li, section span {
         color: #334155 !important;
     }
-        .directions-grid {
-        display: flex !important;
-        flex-direction: column !important;
+         .directions-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Строго 1 колонка во всю ширину */
         width: 100% !important;
         gap: 16px !important;
     }
@@ -515,6 +515,7 @@ body {
     .direction-card {
         width: 100% !important;
         max-width: 100% !important;
+        margin: 0 !important;
         box-sizing: border-box !important;
     }
 
